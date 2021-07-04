@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Binarnij</title>
+</head>
+<body>
+    <script>
+        let array = [1,2,3,4,6,7,12,24,48],
+            n = 48,
+            l = 0,
+            r = array.length,
+            result;
+
+        while (l < r) {
+            let m = Math.floor((l + r) / 2);
+            if (n < array[m]) {
+                r = m;
+            }
+            if (n > array[m]) {
+                l = m;
+            }
+            if (n == array[m]) {
+                result = m;
+                break;
+            }
+        }
+        console.log(`Массив: ${array.join(', ')}`)
+        console.log(`Число ${n}`)
+        console.log(`Индекс числа ${result}`)
+        
+    </script>
+</body>
+</html>
