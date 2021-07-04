@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Skobki</title>
+</head>
+<body>
+    <script>
+        let str = '{dfdf[f{df{(fff)}ff]ff}',
+            stek = [],
+            openSkobki = '({[',
+            closeSkobki = {
+                ')': '(',
+                '}': '{',
+                ']': '['
+            },
+            result = true,
+            errorIndex = 0,
+            errorElement = '';
+        for(let i = 0; i < str.length; i++){
+            if (openSkobki.indexOf(str[i]) > -1) {
+                stek.push(str[i])
+            }
+            if (!!closeSkobki[str[i]]){
+                if (stek[stek.length - 1] == closeSkobki[str[i]]){
+                    stek.pop();
+                } else {
+                    result = false;
+                    errorIndex = i;
+                    errorElement = str[i];
+                    break;
+                }
+            }
+        }
+        if (result) console.log('Проверка скобок прошла успешно')
+        else  console.log(`Проверка скобок выявила ошибку в символе ${errorElement} в позиции #${errorIndex}`)
+    </script>
+</body>
+</html>
