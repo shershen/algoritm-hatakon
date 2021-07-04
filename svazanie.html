@@ -21,19 +21,16 @@
                         }
                     }
                 },
-            newList = {},
             current = list,
+            next = null,
             prev = null;
         while (current !== null) {
-            newList = {
-                value: current.value,
-                next: prev
-            }
-            prev = newList;
-            current = current.next;
+            next = current.next;
+            current.next = prev;
+            prev = current;
+            current = next;
         }
-        console.log(JSON.stringify(list))
-        console.log(JSON.stringify(newList))
+        console.log(JSON.stringify(prev))
     </script>
 </body>
 </html>
