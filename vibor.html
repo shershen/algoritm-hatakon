@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let array =  [2, 4, 6, 7, 3, 1];
+        console.log(`Входящий массив ${array}`);
+        
+        let sortElements = 0;
+        for(let i = 0; i < array.length; i++) {
+            let minElement = array[sortElements],
+                minElementIndex = sortElements;
+            for(let j = sortElements + 1; j < array.length; j++) {
+                if (minElement > array[j]) {
+                    minElement = array[j];
+                    minElementIndex = j;
+                }
+            }
+            array[minElementIndex] = array[sortElements];
+            array[sortElements] = minElement;
+            sortElements++;
+        }
+        
+        console.log(`После сортировки ${array}`);
+        </script>
+</body>
+</html>

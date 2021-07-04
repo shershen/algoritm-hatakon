@@ -11,8 +11,8 @@
         let array =  [2, 4, 6, 7, 3, 1];
         console.log(`Входящий массив ${array}`);
         
-        for(let i = 0; i < array.length - 1; i++) {
-            for(let j = 0; j < array.length - 1; j++) {
+        for(let i = 0; i < array.length; i++) {
+            for(let j = 0; j < array.length; j++) {
                 if (array[j] > array[j+1]) {
                     let buffer = array[j];
                     array[j] = array[j+1];
