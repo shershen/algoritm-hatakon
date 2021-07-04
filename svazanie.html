@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Svazanie</title>
+</head>
+<body>
+    <script>
+        let list = {
+                    value: 1,
+                    next: {
+                        value: 2,
+                        next: {
+                            value: 3,
+                            next: {
+                                value: 4,
+                                next: null
+                            }
+                        }
+                    }
+                },
+            newList = {},
+            current = list,
+            prev = null;
+        while (current !== null) {
+            newList = {
+                value: current.value,
+                next: prev
+            }
+            prev = newList;
+            current = current.next;
+        }
+        console.log(JSON.stringify(list))
+        console.log(JSON.stringify(newList))
+    </script>
+</body>
+</html>
